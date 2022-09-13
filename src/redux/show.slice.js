@@ -40,7 +40,11 @@ export const fetchEpisodes = createAsyncThunk(
 const showSlice = createSlice({
   name: "shows",
   initialState,
-
+  reducers: {
+    removeError: (state, action) => {
+      state.error = null;
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchShows.pending, (state, action) => {
@@ -89,6 +93,9 @@ const showSlice = createSlice({
       });
   },
 });
+
+// actions
+export const { removeError } = showSlice.actions;
 
 export const selectShows = state => state.show.shows;
 export const selectShowDetails = state => state.show.showDetails;
