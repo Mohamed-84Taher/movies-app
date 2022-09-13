@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
-
-const Image_Base_Url = "https://image.tmdb.org/t/p/w500/";
+import { Image_Base_Url } from "../../../constants/image_url";
+import PropTypes from "prop-types";
 
 function Episode({ episode_number, overview, name, still_path }) {
   return (
@@ -49,5 +49,10 @@ function Episode({ episode_number, overview, name, still_path }) {
     </Box>
   );
 }
-
+Episode.prototype = {
+  episode_number: PropTypes.number,
+  overview: PropTypes.string,
+  name: PropTypes.string,
+  still_path: PropTypes.string,
+};
 export default Episode;

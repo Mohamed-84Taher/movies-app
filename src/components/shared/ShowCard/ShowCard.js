@@ -1,8 +1,7 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-
-const Image_Base_Url = "https://image.tmdb.org/t/p/w500/";
+import { Image_Base_Url } from "../../../constants/image_url";
 
 function ShowCard({ id, poster_path, name }) {
   return (

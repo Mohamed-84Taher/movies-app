@@ -9,8 +9,7 @@ import {
   selectEpisodes,
   selectShowDetails,
 } from "redux/show.slice";
-
-const Image_Base_Url = "https://image.tmdb.org/t/p/w500/";
+import { Image_Base_Url } from "../../constants/image_url";
 
 function TvShowDetails() {
   const showDetails = useSelector(selectShowDetails);
@@ -19,7 +18,7 @@ function TvShowDetails() {
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  // fetch tvshow details by id
+  // fetch tvshow details by id and episodes
   useEffect(() => {
     dispatch(fetchDetails(id));
     dispatch(fetchEpisodes(id, 1));
